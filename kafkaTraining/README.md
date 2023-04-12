@@ -1,0 +1,1 @@
+Here i can try to work with Kafka in docker container..
