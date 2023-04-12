@@ -2,6 +2,7 @@ package client
 import (
 	"github.com/segmentio/kafka-go"
 	"testing"
+	"fmt"
 )
 
 func TestClient_sendMessages(t *testing.T) {
@@ -21,9 +22,14 @@ func TestClient_sendMessages(t *testing.T) {
 			Key:   []byte("Test Key"),
 			Value: []byte("Test Value"),
 		},
+		{
+			Key:   []byte("Hello"),
+			Value: []byte("World"),
+		}, 	
 	}
 
 	// Отправка сообщения.
+	fmt.Println("try to send message..")
 	err = kfk.sendMessages(messages)
 	if err != nil {
 		t.Fatal(err)
