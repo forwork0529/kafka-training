@@ -8,7 +8,7 @@ import (
 func TestClient_sendMessages(t *testing.T) {
 	// Инициализация клиента Kafka.
 	kfk, err := New(
-		[]string{"0.0.0.0:9092"},
+		[]string{"kafka:9093"},
 		"test-topic",
 		"test-consumer-group",
 	)
